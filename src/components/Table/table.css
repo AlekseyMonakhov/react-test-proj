@@ -1,0 +1,57 @@
+table {
+  padding-top: 50px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  overflow: hidden;
+}
+caption {
+  font-size: 3rem;
+  padding: 50px;
+  font-weight: bold;
+}
+thead {
+  font-size: 1.5rem;
+  padding-bottom: 30px;
+}
+
+thead,
+tbody {
+  width: 100%;
+}
+th {
+  cursor: pointer;
+}
+tbody > tr {
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+tbody > tr:hover {
+  scale: 1.1;
+  padding: 50px 0;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  font-size: 1.5rem;
+}
+thead > tr,
+tbody > tr {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+th:first-child,
+td:first-child {
+  flex-basis: 20%;
+}
+th:last-child,
+td:last-child {
+  flex-basis: 20%;
+}
+th:nth-child(2),
+td:nth-child(2) {
+  flex-basis: 40%;
+}
+th {
+  text-align: left;
+}

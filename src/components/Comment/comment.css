@@ -1,0 +1,22 @@
+.comment {
+  padding: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.comment > h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.comment > h2::first-letter {
+    text-transform: uppercase;
+}
+
+.comment > time {
+  align-self: flex-end;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
