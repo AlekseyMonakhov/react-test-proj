@@ -43,7 +43,7 @@ tbody > tr {
 th:first-child,
 td:first-child {
   flex-basis: 20%;
-  min-width: 50px;
+  min-width: 80px;
 }
 th:last-child,
 td:last-child {
@@ -57,4 +57,7 @@ td:nth-child(2) {
 }
 th {
   text-align: left;
+}
+td {
+  word-break: break-all;
 }
