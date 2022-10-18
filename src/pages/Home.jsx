@@ -71,7 +71,7 @@ const Projects = () => {
             navigateHandler={navigateHandler}
           />
         ) : (
-          <h3>{pathName !== "/" ? "Loading..." : "Hello user"}</h3>
+          <h3>{pathName !== "/react-test-proj" ? "Loading..." : "Hello user"}</h3>
         )}
       </main>
     </div>

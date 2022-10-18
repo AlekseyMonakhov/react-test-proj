@@ -7,7 +7,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        {["/", "/news", "/show", "/jobs"].map((route) => (
+        {["/react-test-proj", "/news", "/show", "/jobs"].map((route) => (
           <Route
             key={route}
             path={route}
