@@ -1,13 +1,13 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import ProjectInfo from "./pages/ProjectInfo";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/">
       <Routes>
-        {["/react-test-proj", "/news", "/show", "/jobs"].map((route) => (
+        {["/", "/news", "/show", "/jobs"].map((route) => (
           <Route
             key={route}
             path={route}
