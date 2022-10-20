@@ -17,6 +17,14 @@ const Comment = ({ user, user: { user: userName } }) => {
           year: "2-digit",
         })}
       </time>
+      {user.comments.length
+        ? user.comments.map((comment) => (
+            <Comment
+              key={comment.id}
+              user={comment}
+            />
+          ))
+        : null}
     </div>
   );
 };

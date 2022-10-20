@@ -14,7 +14,7 @@ const ProjectInfo = () => {
     const getPost = async () => {
       try {
         const result = await publicRequest.get(`/item/${id}.json`);
-        setPost(result.data);
+        result.status === 200 && setPost(result.data);
         setLoading(false);
       } catch (err) {
         setLoading(false);
@@ -23,7 +23,7 @@ const ProjectInfo = () => {
     };
     getPost();
   }, [id]);
-  
+
   return (
     <div>
       <Menu />

@@ -17,7 +17,7 @@ const Projects = () => {
     const getProjects = async () => {
       try {
         const result = await publicRequest.get(`${pathName}/1.json`);
-        setProjects(result.data);
+        result.status === 200 && setProjects(result.data);
       } catch (err) {
         console.log(err);
       }

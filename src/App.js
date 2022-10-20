@@ -5,7 +5,7 @@ import ProjectInfo from "./pages/ProjectInfo";
 
 function App() {
   return (
-    <Router basename="/">
+    <Router basename='/'>
       <Routes>
         {["/", "/news", "/show", "/jobs"].map((route) => (
           <Route

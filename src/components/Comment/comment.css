@@ -6,17 +6,28 @@
   max-width: 70%;
   margin: 0 auto;
 }
-
-.comment > h2 {
+.comment > h2::first-letter {
+  text-transform: uppercase;
+}
+main > .comment > h2 {
   font-size: 1.3rem;
   font-weight: 600;
 }
-.comment > h2::first-letter {
-    text-transform: uppercase;
+main > .comment > div > p {
+  font-size: 1.1rem;
+  font-weight: 400;
 }
 
-.comment > time {
+main > .comment > time {
   align-self: flex-end;
   font-size: 1.2rem;
   font-weight: 400;
+}
+
+.comment .comment {
+  font-size: 1rem;
+  padding: 0;
+  max-width: 80%;
+  min-width: 200px;
+  margin-right: 0;
 }
