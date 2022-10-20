@@ -2,6 +2,7 @@ import React from "react";
 import "./comment.css";
 
 const Comment = ({ user, user: { user: userName } }) => {
+  console.log(user);
   return (
     <div className='comment'>
       <h2>{userName}</h2>

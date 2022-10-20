@@ -5,6 +5,7 @@
   gap: 20px;
   max-width: 70%;
   margin: 0 auto;
+  word-wrap: break-word;
 }
 .comment > h2::first-letter {
   text-transform: uppercase;
@@ -27,7 +28,7 @@ main > .comment > time {
 .comment .comment {
   font-size: 1rem;
   padding: 0;
-  max-width: 80%;
+  max-width: 90%;
   min-width: 200px;
-  margin-right: 0;
+  margin-left: 10%;
 }
