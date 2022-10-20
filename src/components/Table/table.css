@@ -58,6 +58,17 @@ td:nth-child(2) {
 th {
   text-align: left;
 }
-td {
+td,th {
   word-wrap: break-word;
+}
+
+tr > th.sorted-up::after {
+  content: "☝️";
+  display: inline-block;
+  margin-left: 1rem;
+}
+tr > th.sorted-down::after {
+  content: '👇';
+  display: inline-block;
+  margin-left: 1rem;
 }

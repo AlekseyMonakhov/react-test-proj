@@ -19,6 +19,7 @@ const Projects = () => {
       try {
         const result = await publicRequest.get(`${pathName}/1.json`);
         result.status === 200 && setProjects(result.data);
+        result.status === 200 && setSortedField({});
       } catch (err) {
         console.log(err);
       }
@@ -74,6 +75,7 @@ const Projects = () => {
             items={projects}
             sortHandler={sortHandler}
             navigateHandler={navigateHandler}
+            sortedField={sortedField}
           />
         ) : (
           <h3>{pathName !== "/" ? "Loading..." : "Hello user"}</h3>
