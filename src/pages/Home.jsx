@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
+  const [sortedField, setSortedField] = useState({});
   const location = useLocation();
   const pathName = location.pathname;
   const navigate = useNavigate();
@@ -25,32 +26,36 @@ const Projects = () => {
     pathName !== "/" && getProjects();
   }, [pathName]);
 
-  const sortHandler = useCallback((e) => {
-    if (e.target.abbr === "Time") {
-      setProjects((prev) => [...prev].sort((a, b) => a.time - b.time));
-    }
-    if (e.target.abbr === "Title") {
-      setProjects((prev) =>
-        [...prev].sort((a, b) => a.title.length - b.title.length)
-      );
-    }
-    if (e.target.abbr === "Domain") {
-      setProjects((prev) =>
-        [...prev].sort((a, b) => {
-          if (!a.domain) {
-            return 0;
-          }
-          if (!b.domain) {
-            return -1;
-          }
-          if (!a.domain && !b.domain) {
-            return 0;
-          }
-          return a.domain.length - b.domain.length;
-        })
-      );
-    }
-  }, []);
+  const sortHandler = useCallback(
+    (e) => {
+      if (e.target.abbr) {
+        let fieldName = e.target.abbr.toLowerCase();
+        setProjects((prev) =>
+          [...prev].sort((a, b) => {
+            if (!a[fieldName]) {
+              return 0;
+            }
+            if (!b[fieldName]) {
+              return -1;
+            }
+            if (!a[fieldName] && !b[fieldName]) {
+              return 0;
+            }
+            if (fieldName === "time") {
+              return sortedField[fieldName]
+                ? b[fieldName] - a[fieldName]
+                : a[fieldName] - b[fieldName];
+            }
+            return sortedField[fieldName]
+              ? b[fieldName].length - a[fieldName].length
+              : a[fieldName].length - b[fieldName].length;
+          })
+        );
+        setSortedField({ [fieldName]: !sortedField[fieldName] });
+      }
+    },
+    [sortedField]
+  );
 
   const navigateHandler = useCallback(
     (id, state) => {
