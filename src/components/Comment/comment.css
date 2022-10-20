@@ -32,3 +32,8 @@ main > .comment > time {
   min-width: 200px;
   margin-left: 10%;
 }
+pre {
+  display: block;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
